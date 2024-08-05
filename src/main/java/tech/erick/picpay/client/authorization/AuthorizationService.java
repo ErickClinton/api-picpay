@@ -2,7 +2,7 @@ package tech.erick.picpay.client.authorization;
 
 import org.springframework.stereotype.Service;
 import tech.erick.picpay.exception.PicPayException;
-import tech.erick.picpay.module.tansfer.entity.TransferEntity;
+import tech.erick.picpay.module.tansfer.dto.TransferDto;
 
 @Service
 public class AuthorizationService {
@@ -13,7 +13,7 @@ public class AuthorizationService {
         this.authorizationClient = authorizationClient;
     }
 
-    public boolean booleanisAuthorized(TransferEntity transferEntity){
+    public boolean isAuthorized(TransferDto transferEntity){
         var resp = authorizationClient.isAuthorized();
         if(resp.getStatusCode().isError()) throw new PicPayException();
 
