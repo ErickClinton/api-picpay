@@ -1,5 +1,6 @@
 package tech.erick.picpay.module.wallet;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,7 @@ public class WalletController {
     }
 
     @PostMapping("/wallets")
-    public ResponseEntity<WalletEntity> create(@RequestBody CreateWalletDto createWalletDto){
+    public ResponseEntity<WalletEntity> create(@RequestBody @Valid CreateWalletDto createWalletDto){
         var wallet = walletService.create(createWalletDto);
         return ResponseEntity.ok(wallet);
     }
