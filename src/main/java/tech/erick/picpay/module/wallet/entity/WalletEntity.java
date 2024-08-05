@@ -32,6 +32,14 @@ public class WalletEntity {
     private WalletTypeEntity walletType;
 
 
+    public WalletEntity(String fullname, String cpfCnpj, String email, String password,WalletTypeEntity walletType) {
+        this.fullname = fullname;
+        this.cpfCnpj = cpfCnpj;
+        this.email = email;
+        this.password = password;
+        this.walletType = walletType;
+    }
+
     public WalletEntity(){
 
     }
