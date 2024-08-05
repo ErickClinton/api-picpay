@@ -27,6 +27,12 @@ public class TransferEntity {
 
     public TransferEntity(){}
 
+    public TransferEntity(WalletEntity sender, WalletEntity receiver, BigDecimal value) {
+        this.sender = sender;
+        this.receiver = receiver;
+        this.value = value;
+    }
+
     public UUID getId() {
         return id;
     }
