@@ -40,6 +40,22 @@ public class WalletEntity {
         this.walletType = walletType;
     }
 
+    public boolean isTransferAllowedForWalletType() {
+        return this.walletType.equals(WalletTypeEntity.Enum.USER.get());
+    }
+
+    public boolean isBalanceEqualOrGreaterThan(BigDecimal value) {
+        return this.balance.doubleValue() > value.doubleValue();
+    }
+
+    public void debit(BigDecimal value) {
+        this.balance = this.balance.subtract(value);
+    }
+
+    public void credit(BigDecimal value) {
+        this.balance = this.balance.add(value);
+    }
+
     public WalletEntity(){
 
     }
@@ -99,4 +115,7 @@ public class WalletEntity {
     public void setWalletType(WalletTypeEntity walletType) {
         this.walletType = walletType;
     }
+
+
+
 }
