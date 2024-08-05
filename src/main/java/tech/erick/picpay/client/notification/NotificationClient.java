@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import tech.erick.picpay.module.tansfer.entity.TransferEntity;
 
 @FeignClient(
+        name = "Notification",
         url = "${client.notification-service.url}"
 )
 public interface NotificationClient {
