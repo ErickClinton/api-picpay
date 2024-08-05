@@ -37,7 +37,7 @@ public class WalletTypeEntity {
         this.description = description;
     }
 
-    public enum Enum{
+    public enum Enum {
 
         USER(1L,"user"),
         MERCHANT(2L,"merchant");
